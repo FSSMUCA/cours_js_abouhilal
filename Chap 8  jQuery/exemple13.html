@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Animation avec paramètres jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #maBoite {
+            width: 200px;
+            height: 100px;
+            background-color: tomato;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 30px auto;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#animer').click(function () {
+                $('#maBoite').slideUp(
+                    1000,         // duration en ms
+                    'swing',      // easing (peut être 'linear' ou 'swing')
+                    function () {  // callback (complete)
+                        alert('Animation terminée !');
+                        $('#maBoite').slideDown(800); // réaffiche après l'alerte
+                    }
+                );
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="animer">Lancer l'animation</button>
+    <div id="maBoite">Animation jQuery</div>
+
+</body>
+
+</html>

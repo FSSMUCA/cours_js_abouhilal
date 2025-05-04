@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery click() vs on()</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Syntaxe avec .on()
+            $('#bouton1').on('click', function () {
+                alert('Clic détecté avec .on()');
+            });
+
+            // Syntaxe simplifiée avec .click()
+            $('#bouton2').click(function () {
+                alert('Clic détecté avec .click()');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="bouton1">Cliquez-moi (.on)</button>
+    <button id="bouton2">Cliquez-moi (.click)</button>
+
+</body>
+
+</html>

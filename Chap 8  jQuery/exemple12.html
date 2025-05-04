@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Combinaison d'effets jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #boite {
+            width: 250px;
+            padding: 20px;
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            margin: 20px auto;
+            display: none;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        .btns {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $('#montrer').click(function () {
+                $('#boite')
+                    .fadeIn(500)         // Apparaît en fondu
+                    .delay(300)          // Attend 300 ms
+                    .slideDown(500);     // Puis glisse vers le bas (visuellement sans effet si déjà affiché)
+            });
+
+            $('#cacher').click(function () {
+                $('#boite')
+                    .slideUp(500)        // Glisse vers le haut
+                    .delay(300)
+                    .fadeOut(500);       // Puis disparaît en fondu
+            });
+
+            $('#reset').click(function () {
+                $('#boite')
+                    .stop(true, true)    // Stoppe toute animation en cours
+                    .hide();             // Cache instantanément
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="btns">
+        <button id="montrer">Montrer (fade + slide)</button>
+        <button id="cacher">Cacher (slide + fade)</button>
+        <button id="reset">Réinitialiser</button>
+    </div>
+
+    <div id="boite">Effets combinés en jQuery</div>
+
+</body>
+
+</html>

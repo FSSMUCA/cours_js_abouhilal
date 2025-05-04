@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>jQuery .off() Exemple</title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#colorizer').on('click', function () {
+                // Appliquer la couleur aux lignes paires du tableau
+                $('#things tr:even').css('background', 'yellow');
+
+                // Désactiver le bouton après utilisation
+                $(this).off('click'); // supprime l'événement
+                $(this).prop('disabled', true); // désactive visuellement le bouton
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <table id="things">
+        <tr>
+            <td>Item 1</td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+        </tr>
+        <tr>
+            <td>Pommes</td>
+            <td>Oranges</td>
+            <td>Citrons</td>
+        </tr>
+        <tr>
+            <td>Merlot</td>
+            <td>Malbec</td>
+            <td>Cabernet</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form id="tableControl">
+        <button type="button" id="colorizer">Coloriser</button>
+    </form>
+
+</body>
+
+</html>

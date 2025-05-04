@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Délégation d'événement avec jQuery</title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Délégation : toutes les lignes, actuelles ou futures, sont cliquables
+            $(document).on('click', '#things tr', function () {
+                alert('Vous avez cliqué sur une ligne.');
+            });
+
+            // Ajouter dynamiquement une ligne
+            $('#addRow').click(function () {
+                $('#things').append('<tr><td>Nouvel élément</td><td>Ajouté</td><td>Dynamiquement</td></tr>');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <table id="things">
+        <tr>
+            <td>Item 1</td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+        </tr>
+    </table>
+    <br>
+    <button id="addRow">Ajouter une ligne</button>
+
+</body>
+
+</html>

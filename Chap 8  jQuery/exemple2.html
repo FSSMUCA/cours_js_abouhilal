@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exemple de chaînage en jQuery</title>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+
+    <div id="pageHeader"></div>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            $("#pageHeader")
+                .text("Bonjour, les INF4 !")
+                .css("color", "red")
+                .css("font-size", "60px");
+        }, 2000);
+
+    </script>
+
+</body>
+
+</html>

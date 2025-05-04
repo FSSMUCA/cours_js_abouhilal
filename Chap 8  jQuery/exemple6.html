@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>jQuery CSS</title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#colorizer').on('click', function () {
+                $('#things tr:even').css('background', 'yellow');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <table id="things">
+        <tr>
+            <td>item 1</td>
+            <td>item 2</td>
+            <td>item 3</td>
+        </tr>
+        <tr>
+            <td>pommes</td>
+            <td>oranges</td>
+            <td>citrons</td>
+        </tr>
+        <tr>
+            <td>merlot</td>
+            <td>malbec</td>
+            <td>cabernet sauvignon</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form id="tableControl">
+        <button type="button" id="colorizer">Coloriser</button>
+    </form>
+
+</body>
+
+</html>

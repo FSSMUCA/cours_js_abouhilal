@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Effets de fondu jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #maBoite {
+            width: 200px;
+            height: 100px;
+            background-color: teal;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            opacity: 1;
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#fadeIn').click(function () {
+                $('#maBoite').fadeIn('slow');
+            });
+
+            $('#fadeOut').click(function () {
+                $('#maBoite').fadeOut('slow');
+            });
+
+            $('#fadeTo').click(function () {
+                $('#maBoite').fadeTo('slow', 0.5); // passe à 50% d’opacité
+            });
+
+            $('#fadeToggle').click(function () {
+                $('#maBoite').fadeToggle('slow');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="btns">
+        <button id="fadeIn">fadeIn</button>
+        <button id="fadeOut">fadeOut</button>
+        <button id="fadeTo">fadeTo (0.5)</button>
+        <button id="fadeToggle">fadeToggle</button>
+    </div>
+
+    <div id="maBoite">Boîte jQuery</div>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Effets de base jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #maBoite {
+            width: 200px;
+            height: 100px;
+            background-color: steelblue;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px auto;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        .btns {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 0 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#cacher').click(function () {
+                $('#maBoite').hide('slow');
+            });
+
+            $('#afficher').click(function () {
+                $('#maBoite').show('slow');
+            });
+
+            $('#basculer').click(function () {
+                $('#maBoite').toggle('slow');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="btns">
+        <button id="cacher">Cacher</button>
+        <button id="afficher">Afficher</button>
+        <button id="basculer">Basculer</button>
+    </div>
+
+    <div id="maBoite">Boîte jQuery</div>
+
+</body>
+
+</html>

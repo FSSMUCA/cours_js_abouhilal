@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document Ready avec délai</title>
+    <style>
+        #message {
+            font-size: 24px;
+            color: blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Attendre 2 secondes avant de modifier le contenu
+            setTimeout(function () {
+                $("#message").text("Le DOM est prêt !");
+                $("#message").css("color", "green");
+            }, 2000); // 2000 ms = 2 secondes
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="message">Chargement...</div>
+
+</body>
+
+</html>

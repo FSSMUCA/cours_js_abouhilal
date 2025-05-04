@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sélections multiples en jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <script>
+        setTimeout(function () {
+            $(document).ready(function () {
+                // Sélection multiple : appliquer une couleur rouge à tous ces éléments
+                $('p, h1, h2, h3').css('color', 'red');
+            });
+        }, 2000);
+    </script>
+</head>
+
+<body>
+
+    <h1>Titre principal (h1)</h1>
+    <h2>Sous-titre (h2)</h2>
+    <h3>Section (h3)</h3>
+    <p>Voici un paragraphe modifié avec jQuery.</p>
+    <div>Ce <strong>div</strong> ne sera pas affecté.</div>
+
+</body>
+
+</html>

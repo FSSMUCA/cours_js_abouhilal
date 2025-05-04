@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Animation personnalisée avec jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #monDiv {
+            width: 200px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 30px auto;
+            font-size: 18px;
+            border-radius: 10px;
+            opacity: 1;
+            transition: background-color 0.3s ease;
+            /* changement instantané autorisé */
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#animer').click(function () {
+                $('#monDiv').animate({
+                    width: '500px',
+                    height: '150px',
+                    opacity: 0.6
+                }, 2000, 'swing', function () {
+                    // Une fois l'animation terminée, on change la couleur de fond
+                    $(this).css('background-color', '#2ecc71');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="animer">Lancer l'animation</button>
+
+    <div id="monDiv">Animation jQuery</div>
+
+</body>
+
+</html>

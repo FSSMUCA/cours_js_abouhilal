@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery et CSS dynamiques</title>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sizer').on('input change', function () {
+                $('#theText').css('font-size', $(this).val() + 'px');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="theText">Bonjour FSSM !</div>
+    <form id="controller">
+        <label for="sizer">Taille du texte :</label>
+        <input type="range" id="sizer" min="10" max="100" value="24">
+    </form>
+
+</body>
+
+</html>

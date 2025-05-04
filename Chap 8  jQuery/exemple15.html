@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery CSS Animation</title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        h1 {
+            color: black;
+            font-size: 24px;
+            transition: color 1s, font-size 1s;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#animator').on('click', function () {
+                $('#items').fadeToggle(200);
+                $('#fruits').slideUp(500);
+                $('#wines').toggle(400, 'swing', function () {
+                    $('#wines').toggle(400, 'swing');
+                });
+
+                // animation d'apparence pour le titre
+                $('h1').hide().slideDown(1000, function () {
+                    $(this).css({
+                        'color': 'red',
+                        'font-size': '100px'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>Voici un tas de choses !</h1>
+
+    <table id="things">
+        <tr id="items">
+            <td>item 1</td>
+            <td>item 2</td>
+            <td>item 3</td>
+        </tr>
+        <tr id="fruits">
+            <td>pommes</td>
+            <td>oranges</td>
+            <td>citrons</td>
+        </tr>
+        <tr id="wines">
+            <td>merlot</td>
+            <td>malbec</td>
+            <td>cabernet sauvignon</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form id="tableControl">
+        <button type="button" id="animator">Animez-moi !</button>
+    </form>
+
+</body>
+
+</html>
